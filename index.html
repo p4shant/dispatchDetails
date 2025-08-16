@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamn Enterprises - Plant Dispatch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-solar-panel"></i> Kamn Enterprises Plant Dispatch Details</h1>
+        </header>
+        
+        <form id="dispatch-form" class="form-container">
+            <div class="form-group">
+                <label for="date-time"><i class="fas fa-calendar-alt"></i> Date & Time</label>
+                <input type="datetime-local" id="date-time" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="store"><i class="fas fa-warehouse"></i> Select Store</label>
+                <select id="store" required>
+                    <option value="">-- Choose Store --</option>
+                    <option value="Ghazipur">Ghazipur</option>
+                    <option value="Varanasi">Varanasi</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="technician"><i class="fas fa-user-cog"></i> Name</label>
+                <select id="technician" required>
+                    <option value="">-- Choose Technician --</option>
+                    <option value="Upender">Upender</option>
+                    <option value="Ashish">Ashish</option>
+                    <option value="Bablu">Bablu</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="district"><i class="fas fa-map-marker-alt"></i> Destination District</label>
+                <select id="district" required>
+                    <option value="">-- Choose District --</option>
+                    <option value="Ghazipur">Ghazipur</option>
+                    <option value="Varanasi">Varanasi</option>
+                    <option value="Ballia">Ballia</option>
+                    <option value="Azamgarh">Azamgarh</option>
+                    <option value="Mau">Mau</option>
+                    <option value="Chandauli">Chandauli</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Jaunpur">Jaunpur</option>
+                    <option value="Mirzapur">Mirzapur</option>
+                    <option value="Bhadohi">Bhadohi</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="system-count"><i class="fas fa-calculator"></i> Total Systems Dispatched</label>
+                <input type="number" id="system-count" min="1" max="20" placeholder="Enter number of systems" required>
+            </div>
+            
+            <div id="cards-container" class="card-container">
+                <div class="system-count">
+                    <i class="fas fa-boxes"></i>
+                    <span id="count-display">0 systems to configure</span>
+                </div>
+                <div id="cards"></div>
+            </div>
+            
+            <div class="buttons">
+                <button type="button" id="reset-btn" class="reset-btn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+                <button type="button" id="save-btn" class="save-btn">
+                    <i class="fas fa-save"></i> Save to Sheet
+                </button>
+            </div>
+        </form>
+        
+        <div class="notification" id="notification">
+            Data saved successfully to Google Sheet!
+        </div>
+
+        <div class="loading" id="loading">
+            <i class="fas fa-spinner fa-spin"></i> Saving...
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Kamn Enterprises | Solar Plant Dispatch System</p>
+            <p>Designed for efficient solar plant management</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

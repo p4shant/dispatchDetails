@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+  color: #333;
+  line-height: 1.6;
+  padding: 10px;
+  min-height: 100vh;
+  font-size: 16px; /* Base font size */
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+header {
+  background: linear-gradient(to right, #1a237e, #311b92);
+  color: white;
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 10px;
+  margin: 8px 0 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #ffd600;
+}
+
+header h1 {
+  font-size: 1.2rem; /* Smaller base size for mobile */
+  font-weight: 600;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1a237e;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #d1d1d6;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  -webkit-appearance: none; /* Remove default iOS styling */
+  appearance: none;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #5c6bc0;
+  box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
+  background: white;
+}
+
+/* Replace the generic input/select rule so checkboxes keep default behavior */
+input:not([type="checkbox"]),
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #d1d1d6;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  -webkit-appearance: none; /* only for text/select controls */
+  appearance: none;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #5c6bc0;
+  box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
+  background: white;
+}
+
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.component-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  cursor: pointer; /* label or container click will show pointer */
+  user-select: none;
+}
+
+/* Keep native checkbox control visible and clickable */
+.component-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: checkbox;
+  appearance: checkbox;
+}
+
+/* Label styling ensures clicking label toggles checkbox */
+.component-item label {
+  margin: 0;
+  font-weight: 600;
+  color: #1a237e;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.card-container {
+  display: none;
+  margin-top: 25px;
+}
+
+.card {
+  background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #1a237e;
+  position: relative;
+  z-index: 1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #90caf9;
+}
+
+.card-title {
+  font-weight: 700;
+  color: #1a237e;
+  font-size: 1.1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-direction: column; /* Stack buttons on mobile */
+  margin-top: 20px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.save-btn {
+  background: linear-gradient(to right, #2e7d32, #4caf50);
+  color: white;
+}
+
+.reset-btn {
+  background: linear-gradient(to right, #c62828, #f44336);
+  color: white;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+.save-btn:hover {
+  background: linear-gradient(to right, #1b5e20, #388e3c);
+}
+
+.reset-btn:hover {
+  background: linear-gradient(to right, #b71c1c, #d32f2f);
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+  font-weight: 600;
+  animation: slideIn 0.3s ease-out;
+  width: 90%;
+  max-width: 300px;
+  font-size: 0.9rem;
+}
+
+@keyframes slideIn {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+.footer {
+  text-align: center;
+  color: white;
+  padding: 15px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 15px;
+}
+
+/* Media Queries */
+@media (min-width: 375px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .buttons {
+    flex-direction: row;
+  }
+  
+  header h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 600px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .components-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .form-container {
+    padding: 20px;
+  }
+  
+  input,
+  select {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+  
+  label {
+    font-size: 0.95rem;
+  }
+  
+  button {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    input,
+    select,
+    button {
+        cursor: default;
+    }
+    
+    button:active {
+        transform: scale(0.98);
+    }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+    input,
+    select {
+        font-size: 16px; /* Prevent iOS zoom on focus */
+    }
+    
+    .form-container {
+        -webkit-overflow-scrolling: touch;
+    }
+
+}}
+
+/* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fix for notch devices */
+@supports (padding: max(0px)) {
+    .container {
+        padding-left: max(10px, env(safe-area-inset-left));
+        padding-right: max(10px, env(safe-area-inset-right));
+    }
+}
