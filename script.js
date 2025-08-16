@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Plant types
   const plantTypes = ["2 Kw", "3 Kw", "4 Kw", "6 Kw", "8 Kw", "10 Kw"];
 
-  // Components list
+  // Components list (added new four wiring fields)
   const components = [
     "Module",
     "Inverter",
@@ -30,6 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
     "L.A",
     "Structure",
     "WiFi",
+    "AC wire",
+    "DC wire",
+    "Earthing Wire",
+    "Earth Pit"
   ];
 
   // Populate store / technician / district selects (added to ensure UI has options)
@@ -237,5 +241,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return true;
   }
-
 });
